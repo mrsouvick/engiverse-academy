@@ -1,0 +1,41 @@
+# /public/admin/config.yml
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "team"
+    label: "Team Members"
+    folder: "src/content/team"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Role", name: "role", widget: "string" }
+      - { label: "Bio", name: "body", widget: "markdown" }
+      - { label: "Avatar", name: "avatar", widget: "image" }
+
+  - name: "branches"
+    label: "Engineering Branches"
+    folder: "src/content/branches"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Branch Name", name: "title", widget: "string" }
+      - { label: "Description", name: "body", widget: "markdown" }
+      - { label: "Icon", name: "icon", widget: "string" }
+
+  - name: "semesters"
+    label: "Semester Content"
+    folder: "src/content/semesters"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Semester Title", name: "title", widget: "string" }
+      - { label: "Branch", name: "branch", widget: "relation", collection: "branches", value_field: "title", search_fields: ["title"] }
+      - { label: "Subjects", name: "subjects", widget: "list", fields: [{label: "Subject Name", name: "name", widget: "string"}, {label: "YouTube Playlist ID", name: "playlistId", widget: "string"}] }
+      - { label: "Notes PDF Link", name: "notesLink", widget: "string", required: false }
+      - { label: "Roadmap Image", name: "roadmap", widget: "image", required: false }

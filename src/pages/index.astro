@@ -1,11 +1,114 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
+// src/pages/index.astro
+---
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>EngiVerse e Academy - Your MAKAUT Study Companion</title>
+		<meta name="description" content="Structured learning for MAKAUT ECE, EE, ME, and CE students. Get lecture videos, notes, roadmaps, and exam suggestions." />
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+	</head>
+	<body class="font-sans" style="font-family: 'Inter', sans-serif;">
+		<!-- Navigation -->
+		<header class="bg-white shadow-sm sticky top-0 z-50">
+			<nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+				<a href="/" class="text-2xl font-bold text-blue-800">EngiVerse Academy</a>
+				<div class="space-x-6">
+					<a href="/branches" class="text-gray-600 hover:text-blue-700 font-medium">Branches</a>
+					<a href="/team" class="text-gray-600 hover:text-blue-700 font-medium">Our Team</a>
+					<a href="https://youtube.com/your-channel-link" target="_blank" class="bg-red-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-red-700 transition-colors">YouTube Channel</a>
+				</div>
+			</nav>
+		</header>
 
-<Layout>
-	<Welcome />
-</Layout>
+		<!-- Hero Section -->
+		<section class="bg-gradient-to-br from-blue-50 to-indigo-100 py-20">
+			<div class="container mx-auto px-6 text-center">
+				<h1 class="text-5xl md:text-6xl font-extrabold text-gray-900 mb-6">
+					Your <span class="text-blue-600">Engineering</span> Study Hub
+				</h1>
+				<p class="text-xl text-gray-600 mb-10 max-w-3xl mx-auto">
+					Structured, semester-wise learning for MAKAUT students. Master your core subjects with expert lectures, curated notes, and clear roadmaps.
+				</p>
+				<div class="flex flex-col sm:flex-row gap-4 justify-center">
+					<a href="/branches" class="bg-blue-600 text-white px-8 py-4 rounded-xl text-lg font-semibold hover:bg-blue-700 transition-colors shadow-lg">
+						Explore by Branch
+					</a>
+					<a href="https://youtube.com/your-channel-link" target="_blank" class="border border-gray-300 text-gray-700 px-8 py-4 rounded-xl text-lg font-semibold hover:bg-gray-50 transition-colors">
+						Watch on YouTube
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<!-- Features Section -->
+		<section class="py-16 bg-white">
+			<div class="container mx-auto px-6">
+				<h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Everything You Need To Succeed</h2>
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+					<!-- Feature 1 -->
+					<div class="text-center p-6">
+						<div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+							<!-- Video Icon -->
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-600"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+						</div>
+						<h3 class="text-xl font-semibold mb-2">Lecture Videos</h3>
+						<p class="text-gray-600">In-depth, easy-to-follow videos for every subject, from basics to advanced topics.</p>
+					</div>
+					<!-- Feature 2 -->
+					<div class="text-center p-6">
+						<div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+							<!-- Notes Icon -->
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-600"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+						</div>
+						<h3 class="text-xl font-semibold mb-2">Curated Notes</h3>
+						<p class="text-gray-600">Handwritten and digital notes, reference sheets, and important question banks.</p>
+					</div>
+					<!-- Feature 3 -->
+					<div class="text-center p-6">
+						<div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+							<!-- Roadmap Icon -->
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-purple-600"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+						</div>
+						<h3 class="text-xl font-semibold mb-2">Study Roadmaps</h3>
+						<p class="text-gray-600">A clear, step-by-step path to cover your syllabus efficiently and effectively.</p>
+					</div>
+					<!-- Feature 4 -->
+					<div class="text-center p-6">
+						<div class="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+							<!-- Exam Icon -->
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-orange-600"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+						</div>
+						<h3 class="text-xl font-semibold mb-2">Exam Prep</h3>
+						<p class="text-gray-600">PYQ suggestions, quick revision content, and focused guidance to ace your exams.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- CTA Section -->
+		<section class="py-16 bg-gray-900 text-white">
+			<div class="container mx-auto px-6 text-center">
+				<h2 class="text-3xl font-bold mb-4">Ready to Transform Your Engineering Journey?</h2>
+				<p class="text-xl text-gray-300 mb-8">Join thousands of MAKAUT students who are already learning smarter with EngiVerse.</p>
+				<a href="/branches" class="bg-white text-gray-900 px-8 py-4 rounded-xl text-lg font-semibold hover:bg-gray-100 transition-colors inline-block">
+					Get Started Now
+				</a>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<footer class="bg-gray-800 text-white py-8 text-center">
+			<div class="container mx-auto px-6">
+				<p>&copy; 2023 EngiVerse e Academy. All rights reserved. An initiative for students, by students.</p>
+			</div>
+		</footer>
+	</body>
+</html>
