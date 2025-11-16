@@ -1,0 +1,48 @@
+---
+// src/layouts/Layout.astro
+export interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Structured learning for MAKAUT ECE, EE, ME, and CE students. Get lecture videos, notes, roadmaps, and exam suggestions." } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  </head>
+  <body class="font-sans" style="font-family: 'Inter', sans-serif;">
+    <!-- Navigation -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+      <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="/" class="text-2xl font-bold text-blue-800">EngiVerse Academy</a>
+        <div class="space-x-6">
+          <a href="/branches" class="text-gray-600 hover:text-blue-700 font-medium">Branches</a>
+          <a href="/team" class="text-gray-600 hover:text-blue-700 font-medium">Our Team</a>
+          <a href="https://youtube.com/your-channel-link" target="_blank" class="bg-red-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-red-700 transition-colors">YouTube Channel</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 text-center">
+      <div class="container mx-auto px-6">
+        <p>&copy; 2023 EngiVerse e Academy. All rights reserved. An initiative for students, by students.</p>
+      </div>
+    </footer>
+  </body>
+</html>
